@@ -7,7 +7,8 @@
  */
 
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import CreateNewAcc from "./CreateNewAcc";
 import ReadString from "./ReadString";
 import SetString from "./SetString";
 
@@ -43,6 +44,10 @@ export default class App extends Component<Props> {
                 drizzleState={this.state.drizzleState}
               />
               <SetString
+                drizzle={this.props.drizzle}
+                drizzleState={this.state.drizzleState}
+              />
+              <CreateNewAcc
                 drizzle={this.props.drizzle}
                 drizzleState={this.state.drizzleState}
               />

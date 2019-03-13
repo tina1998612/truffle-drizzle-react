@@ -1,8 +1,8 @@
-import React from 'react';
-import { Button, Text, TextInput, View } from 'react-native';
+import React from "react";
+import { Button, Text, TextInput, View } from "react-native";
 
 class SetString extends React.Component {
-  state = { stackId: null, text: '' };
+  state = { stackId: null, text: "" };
 
   submit = () => {
     this.setValue(this.state.text);
@@ -13,8 +13,9 @@ class SetString extends React.Component {
     const contract = drizzle.contracts.MyStringStore;
 
     // let drizzle know we want to call the `set` method with `value`
-    const stackId = contract.methods['set'].cacheSend(
-      value, { from: drizzleState.accounts[0] });
+    const stackId = contract.methods["set"].cacheSend(value, {
+      from: drizzleState.accounts[0]
+    });
 
     // save the `stackId` for later reference
     this.setState({ stackId });
@@ -41,18 +42,14 @@ class SetString extends React.Component {
     return (
       <View>
         <TextInput
-          style=
-          {
-            { height: 40, borderColor: 'gray', borderWidth: 1 }
-          } onChangeText={text =>
-            this.setState(
-              { text })} value={this.state.text} placeholder=
-          'Enter some text' /> <Button title='Submit' onPress=
-            {
-              this.submit
-            } />
-        <Text>{this.getTxStatus()}</Text><
-        /View>
+          style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
+          onChangeText={text => this.setState({ text })}
+          value={this.state.text}
+          placeholder="Enter some text"
+        />
+        <Button title="Submit" onPress={this.submit} />
+        <Text>{this.getTxStatus()}</Text>
+      </View>
     );
   }
 }
