@@ -37,17 +37,17 @@ export default class App extends Component<Props> {
         {this.state.loading ? (
           <Text>Loading...</Text>
         ) : (
-          <View>
-            <ReadString
-              drizzle={this.props.drizzle}
-              drizzleState={this.state.drizzleState}
-            />
-            <SetString
-              drizzle={this.props.drizzle}
-              drizzleState={this.state.drizzleState}
-            />
-          </View>
-        )}
+            <View>
+              <ReadString
+                drizzle={this.props.drizzle}
+                drizzleState={this.state.drizzleState}
+              />
+              <SetString
+                drizzle={this.props.drizzle}
+                drizzleState={this.state.drizzleState}
+              />
+            </View>
+          )}
       </View>
     );
   }
